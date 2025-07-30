@@ -3,11 +3,12 @@ import { useNavigate, useParams } from "react-router";
 import { CastMember } from "../types/CastMember";
 import useShowDetails from "../hooks/useShowDetails";
 import CastMemberCard from "../components/CastMemberCard";
+import FavoriteButton from "../components/FavoriteButton";
 
 const ShowDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  
+
   const { data, error, isLoading } = useShowDetails(Number(id));
 
   if (isLoading) {
@@ -46,7 +47,10 @@ const ShowDetailPage: React.FC = () => {
         ← Back to list
       </button>
 
-      <h1>{name}</h1>
+      <div>
+        <h1>{name}</h1>
+        <FavoriteButton showId={Number(id)} />
+      </div>
 
       {image?.original && (
         <img
