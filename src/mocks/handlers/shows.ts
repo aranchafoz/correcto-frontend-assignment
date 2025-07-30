@@ -4,7 +4,7 @@ export const getShowListHandler: HttpResponseResolver = ({ request }) => {
   const url = new URL(request.url);
   const page = Number(url.searchParams.get('page') || '0');
 
-  const mockMovies = Array.from({ length: 10 }, (_, i) => ({
+  const mockMovies = Array.from({ length: 21 }, (_, i) => ({
     id: page * 10 + i,
     name: `Movie ${page * 10 + i}`,
     url: '',
@@ -24,7 +24,10 @@ export const getShowListHandler: HttpResponseResolver = ({ request }) => {
     webChannel: null,
     dvdCountry: null,
     externals: { tvrage: null, thetvdb: null, imdb: null },
-    image: { medium: '', original: '' },
+    image: {
+      medium: 'https://via.placeholder.com/150',
+      original: 'https://via.placeholder.com/300',
+    },
     summary: '',
     updated: Date.now(),
     _links: { self: { href: '' } },

@@ -8,9 +8,13 @@ describe('useInfiniteShows', () => {
     const { result } = renderHook(() => useInfiniteShows(), { wrapper: TestProviders });
 
     await waitFor(() => result.current.isSuccess);
+    await waitFor(() => {
+      expect(result.current.data?.pages?.[0]).toBeDefined();
+    });
+
 
     const page = result.current.data?.pages[0];
-    expect(page).toHaveLength(10);
+    expect(page).toHaveLength(21);
     expect(page?.[0].name).toBe('Movie 0');
   });
 });
