@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router";
 import ShowListPage from "./pages/ShowListPage";
-import MovieDetailPage from "./pages/MovieDetailPage";
+import ShowDetailPage from "./pages/ShowDetailPage";
 import ErrorPage from "./pages/ErrorPage";
 
 const baseRouteObject = {
@@ -15,7 +15,7 @@ const routes: RouteObject[] = [
   },
   {
     path: "/show/:id",
-    element: <MovieDetailPage />,
+    element: <ShowDetailPage />,
     ...baseRouteObject,
   },
   {
