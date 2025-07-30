@@ -1,3 +1,5 @@
+import { CastMember } from "./CastMember";
+
 export interface TvShow {
   id: number;
   name: string;
@@ -50,5 +52,8 @@ export interface TvShow {
       href: string;
       name: string;
     };
+  };
+  _embedded?: {
+    cast: CastMember[];
   };
 }
