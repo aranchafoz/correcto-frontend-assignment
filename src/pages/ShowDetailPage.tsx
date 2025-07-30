@@ -1,11 +1,13 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { CastMember } from "../types/CastMember";
 import useShowDetails from "../hooks/useShowDetails";
 import CastMemberCard from "../components/CastMemberCard";
 
 const ShowDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  
   const { data, error, isLoading } = useShowDetails(Number(id));
 
   if (isLoading) {
@@ -38,6 +40,12 @@ const ShowDetailPage: React.FC = () => {
 
   return (
     <div>
+      <button
+        onClick={() => navigate("/")}
+      >
+        ← Back to list
+      </button>
+
       <h1>{name}</h1>
 
       {image?.original && (
