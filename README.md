@@ -1,32 +1,75 @@
-# Movie Explorer App
+# Movie Explorer
 
-## Objetivo
+A React application for exploring and marking TV shows as favorites. Built with production-quality practices including component design, theming, state management, and testing.
 
-Construir una pequeña aplicación web en React que consuma una API y permita explorar una lista de películas. Queremos que trates este mini proyecto como si lo fueses a poner en producción.
+## Scripts
 
-## Requisitos
+```bash
+# Install dependencies
+npm install
 
-El único requisito es el siguiente: de usarse alguna librería para gestión de estado, cosa totalmente opcional, por favor usar `@preact/signals-react`
+# Run development server
+npm run dev
 
-## Instrucciones
+# Run tests
+npm test
+```
 
-Listado de películas:
+## Technologies Used
+- React – For building the UI components and views.
 
-- Muestra el título, imagen y resumen de cada show.
-- Paginación o scroll infinito (mínimo 20 elementos visibles).
+- TypeScript – Provides static typing to improve code quality and maintainability.
 
-Detalle:
+- React Router – Handles navigation between the list and detail pages.
 
-- Al hacer clic en una película, muestra una vista de detalle con más información.
+- React Query – Manages data fetching, caching, and pagination.
 
-Favoritos:
+- @preact/signals-react – Lightweight state management used for the favorites system, integrated with localStorage.
 
-- El usuario puede marcar películas como favoritas (almacenado en localStorage).
+- Styled Components – Provides a component-scoped styling system with support for theming.
 
-Usa esta API pública de ejemplo `GET https://api.tvmaze.com/shows`.
+## Design System
+The application uses a typed semantic theme built with styled-components.
 
-Incluye un README explicando brevemente qué harías diferente con más tiempo.
+### Theme Structure
+#### Colors
+primaryColor: Based on Oxford Blue – used for backgrounds and main sections.
 
-## Entrega
+**accentColor**: Based on Mint – used for highlights and interactive elements.
 
-Sube tu código a un repo de GitHub. Si es privado trendrás que darnos acceso (usuario ograu)
+**secondaryColor**: Based on Black – used for borders or less prominent text.
+
+**textPrimaryColor**: White – for text on dark surfaces.
+
+**textSecondaryColor**: Platinum – for less prominent text or labels.
+
+**surfaceColor**: Background surfaces for cards and containers.
+
+All color combinations were selected for accessible contrast (WCAG AA/AAA where applicable).
+
+#### Spacing
+A consistent spacing scale is defined in the theme (e.g. spacing.sm, spacing.md, spacing.lg), ensuring layout consistency across components.
+
+## Features
+- Paginated show listing (initially 20 shows, load more on demand).
+
+- Show detail view includes cast list.
+
+- Favorite shows are persisted in localStorage and managed with signals.
+
+- Responsive design.
+
+- Typed theme and styled components for consistent and scalable design.
+
+- Unit and integration tests using React Testing Library and Vitest.
+
+## Potential Improvements
+With additional time, the following enhancements could be implemented:
+
+- End-to-end tests with Playwright
+
+- Add search functionality with debounced input.
+
+- Optimize images using lazy loading and responsive sources.
+
+- Introduce subtle animations with Framer Motion.
