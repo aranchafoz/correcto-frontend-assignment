@@ -1,6 +1,7 @@
 import { useInfiniteShows } from '../hooks/useInfiniteShows';
 import { useState, useMemo } from 'react';
 import { ShowCard } from './ShowCard';
+import { List, SeeMoreButton } from './ShowList.styles';
 
 const VISIBLE_SHOWS_COUNT = 20;
 const LOAD_MORE_SHOWS_COUNT = 10;
@@ -32,23 +33,22 @@ export function ShowList() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4">
+      <List>
         {visibleShows.map((show) => (
           <ShowCard key={show.id} show={show} />
         ))}
-      </div>
+      </List>
 
-      <div className="mt-6 text-center">
+      <div>
         {hasNextPage || visibleCount < allShows.length ? (
-          <button
+          <SeeMoreButton
             onClick={handleLoadMore}
-            className="px-4 py-2 bg-blue-600 text-white rounded"
             disabled={isFetchingNextPage}
           >
             {isFetchingNextPage ? 'Loading...' : 'See more shows'}
-          </button>
+          </SeeMoreButton>
         ) : (
-          <p className="text-gray-500 mt-4">There isn't more shows</p>
+          <p>There isn't more shows</p>
         )}
       </div>
     </div>

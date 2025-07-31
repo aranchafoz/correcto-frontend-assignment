@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { favoriteShowIds, toggleFavorite } from '../signals/favorites';
 import { useSignalEffect } from '@preact/signals-react';
+import { StyledButton } from './FavoriteButton.styles';
 
 function FavoriteButton({ showId }: { showId: number }) {
   const [isFav, setIsFav] = useState(favoriteShowIds.value.has(showId));
@@ -15,12 +16,12 @@ function FavoriteButton({ showId }: { showId: number }) {
   };
 
   return (
-    <button
+    <StyledButton
       onClick={handleClick}
       className={isFav ? 'is-favorite' : ''}
     >
       {isFav ? '★ Remove Favorite' : '☆ Add to Favorites'}
-    </button>
+    </StyledButton>
   );
 }
 

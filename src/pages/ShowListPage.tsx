@@ -3,7 +3,7 @@ import { ShowList } from '../components/ShowList';
 function ShowListPage() {
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div>
       <h1>TV show list</h1>
       <ShowList />
     </div>
