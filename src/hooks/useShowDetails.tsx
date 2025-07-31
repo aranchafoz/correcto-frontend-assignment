@@ -1,13 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import { endpoints } from '../constants/endpoints';
+import { TvShow } from '../types/TvShow';
+import { apiRequest } from '../utils/api';
 
-function fetchShowDetails(id: number) {
-  return fetch(`https://api.tvmaze.com/shows/${id}?embed=cast`).then(res => {
-    if (!res.ok) {
-      throw new Error('Error fetching show details');
-    }
-    return res.json();
-  });
-}
+export const fetchShowDetails = (id: number): Promise<TvShow> => {
+  return apiRequest<TvShow>(endpoints.showDetails(id));
+};
 
 function useShowDetails(id: number | undefined) {
   return useQuery({

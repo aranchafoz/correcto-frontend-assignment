@@ -1,11 +1,14 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { TvShow } from '../types/TvShow';
+import { endpoints } from '../constants/endpoints';
+import { apiRequest } from '../utils/api';
 
-const fetchShowsPage = async ({ pageParam = 0 }: { pageParam?: unknown }): Promise<TvShow[]> => {
+
+export const fetchShowsPage = async ({
+  pageParam = 0,
+}: { pageParam?: unknown }): Promise<TvShow[]> => {
   const page = typeof pageParam === 'number' ? pageParam : 0;
-  const res = await fetch(`https://api.tvmaze.com/shows?page=${page}`);
-  if (!res.ok) throw new Error('Error fetching shows');
-  return res.json();
+  return apiRequest<TvShow[]>(`${endpoints.showList}?page=${page}`);
 };
 
 export function useInfiniteShows() {
