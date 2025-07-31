@@ -68,6 +68,8 @@ With additional time, the following enhancements could be implemented:
 
 - End-to-end tests with Playwright
 
+- Improve unit test coverage
+
 - Add search functionality with debounced input.
 
 - Optimize images using lazy loading and responsive sources.
