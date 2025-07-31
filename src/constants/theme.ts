@@ -85,7 +85,7 @@ export const theme: AppTheme = {
     md: '1rem',      // 16px
     lg: '1.5rem',    // 24px
     xl: '2rem',      // 32px
-    '2xl': '3rem',   // 48px
-    '3xl': '4rem',   // 64px
+    xxl: '3rem',   // 48px
+    xxxl: '4rem',   // 64px
   },
 };

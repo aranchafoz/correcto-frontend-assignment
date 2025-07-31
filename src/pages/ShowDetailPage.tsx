@@ -4,6 +4,7 @@ import { CastMember } from "../types/CastMember";
 import useShowDetails from "../hooks/useShowDetails";
 import CastMemberCard from "../components/CastMemberCard";
 import FavoriteButton from "../components/FavoriteButton";
+import { BackButton, CastList, ContentWrapper, Details, InfoList, PageWrapper, Poster, TitleRow } from "./ShowDetailPage.styles";
 
 const ShowDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,75 +34,57 @@ const ShowDetailPage: React.FC = () => {
     rating,
     runtime,
     network,
-    officialSite,
     _embedded,
   } = data;
 
   const cast: CastMember[] = _embedded?.cast ?? [];
 
   return (
-    <div>
-      <button
+    <PageWrapper>
+      <BackButton
         onClick={() => navigate("/")}
       >
         ← Back to list
-      </button>
+      </BackButton>
 
-      <div>
-        <h1>{name}</h1>
-        <FavoriteButton showId={Number(id)} />
-      </div>
+      <ContentWrapper>
+        {image?.original && (
+          <Poster
+            src={image.original}
+            alt={`Poster of ${name}`}
+          />
+        )}
 
-      {image?.original && (
-        <img
-          src={image.original}
-          alt={`Poster of ${name}`}
-          style={{ maxWidth: "300px", borderRadius: "8px" }}
-        />
-      )}
+        <Details>
+          <TitleRow>
+            <h1>{name}</h1>
+            <FavoriteButton showId={Number(id)} />
+          </TitleRow>
 
-      {officialSite && (
-        <p>
-          <a href={officialSite} target="_blank" rel="noopener noreferrer">
-            Official site
-          </a>
-        </p>
-      )}
+          <InfoList>
+            <li><strong>Genres:</strong> {genres.join(', ') || 'N/A'}</li>
+            <li><strong>Premiered:</strong> {premiered || 'N/A'}</li>
+            <li><strong>Status:</strong> {status || 'N/A'}</li>
+            <li><strong>Rating:</strong> {rating?.average ?? 'N/A'}</li>
+            <li><strong>Runtime:</strong> {runtime ? `${runtime} min` : 'N/A'}</li>
+            <li><strong>Network:</strong> {network?.name || 'N/A'}</li>
+          </InfoList>
 
-      <div dangerouslySetInnerHTML={{ __html: summary }} />
-
-      <ul>
-        <li>
-          <strong>Genres:</strong> {genres.join(", ") || "N/A"}
-        </li>
-        <li>
-          <strong>Premiered:</strong> {premiered || "N/A"}
-        </li>
-        <li>
-          <strong>Status:</strong> {status || "N/A"}
-        </li>
-        <li>
-          <strong>Rating:</strong> {rating?.average ?? "N/A"}
-        </li>
-        <li>
-          <strong>Runtime:</strong> {runtime ? `${runtime} min` : "N/A"}
-        </li>
-        <li>
-          <strong>Network:</strong> {network?.name || "N/A"}
-        </li>
-      </ul>
+          <div dangerouslySetInnerHTML={{ __html: summary }} />
+        </Details>
+      </ContentWrapper>
 
       <h2>Cast</h2>
       {cast.length === 0 && <p>No cast information available.</p>}
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <CastList>
         {cast.map(({ person, character }) => (
           <CastMemberCard
             key={person.id}
             member={{ person, character }}
           />
         ))}
-      </ul>
-    </div>
+      </CastList>
+    </PageWrapper>
   );
 };
 

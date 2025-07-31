@@ -22,6 +22,7 @@ export const ShowCardContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-grow: 1;
   gap: ${({ theme }) => theme.spacing.sm};
 `;
 

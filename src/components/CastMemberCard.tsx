@@ -22,7 +22,9 @@ const CastMemberCard: React.FC<CastCardProps> = ({ member }) => {
         />
       )}
       <div>
-        <strong>{member.person.name}</strong> as {member.character.name}
+        <strong>{member.person.name}</strong>
+        <br/>
+        <span>{member.character.name}</span>
       </div>
     </li>
   );

@@ -67,7 +67,7 @@ export interface AppTheme {
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
-    '3xl': string;
+    xxl: string;
+    xxxl: string;
   };
 }
