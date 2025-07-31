@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router';
+import { theme } from '../constants/theme.ts';
+import { ThemeProvider } from 'styled-components';
 
 export function TestProviders({ children }: { children: ReactNode }) {
 
@@ -9,7 +11,9 @@ export function TestProviders({ children }: { children: ReactNode }) {
   return (
     <MemoryRouter>
       <QueryClientProvider client={queryClient}>
-        {children}
+        <ThemeProvider theme={theme}>
+          {children}
+        </ThemeProvider>
       </QueryClientProvider>
     </MemoryRouter>
   );

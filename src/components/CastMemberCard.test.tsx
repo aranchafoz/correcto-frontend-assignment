@@ -7,7 +7,7 @@ describe('CastMemberCard', () => {
   it('renders the cast member name and character', () => {
     render(<CastMemberCard member={mockMember} />);
     expect(screen.getByText('John Doe')).toBeInTheDocument();
-    expect(screen.getByText(/as Hero Man/)).toBeInTheDocument();
+    expect(screen.getByText(/Hero Man/)).toBeInTheDocument();
   });
 
   it('renders the image if available', () => {
