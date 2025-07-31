@@ -1,3 +1,4 @@
+import { routes } from '../constants/routes';
 import { TvShow } from '../types/TvShow';
 import FavoriteButton from './FavoriteButton';
 import { ShowCardContent, ShowCardDescription, ShowCardHeader, ShowCardLink, ShowCardTitle, ShowImage } from './ShowCard.styles';
@@ -8,7 +9,7 @@ interface ShowCardProps {
 
 export function ShowCard({ show }: ShowCardProps) {
   return (
-    <ShowCardLink to={`/show/${show.id}`} data-testid="show-card">
+    <ShowCardLink to={routes.showDetails(show.id)} data-testid="show-card">
       <ShowImage src={show.image?.medium} alt={show.name} />
       <ShowCardContent>
         <ShowCardHeader>

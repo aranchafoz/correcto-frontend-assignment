@@ -5,6 +5,7 @@ import useShowDetails from "../hooks/useShowDetails";
 import CastMemberCard from "../components/CastMemberCard";
 import FavoriteButton from "../components/FavoriteButton";
 import { BackButton, CastList, ContentWrapper, Details, InfoList, PageWrapper, Poster, TitleRow } from "./ShowDetailPage.styles";
+import { routes } from "../constants/routes";
 
 const ShowDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -42,7 +43,7 @@ const ShowDetailPage: React.FC = () => {
   return (
     <PageWrapper>
       <BackButton
-        onClick={() => navigate("/")}
+        onClick={() => navigate(routes.home)}
       >
         ← Back to list
       </BackButton>
