@@ -8,6 +8,11 @@ export const ShowCardLink = styled(Link)`
   background: ${({ theme }) => theme.colors.surfaceColor};
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.oxfordBlue600};
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ShowCardHeader = styled.div`
