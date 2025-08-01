@@ -75,3 +75,7 @@ With additional time, the following enhancements could be implemented:
 - Optimize images using lazy loading and responsive sources.
 
 - Introduce subtle animations with Framer Motion.
+
+- Add relative paths with alias (f.e.: '@/' is equivalent to './src/')
+
+- Move all displayed texts into i18n translation files
