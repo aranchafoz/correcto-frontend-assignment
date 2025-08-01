@@ -1,4 +1,4 @@
-import { CastMember } from "../types/CastMember";
+import { CastMember } from "../../types/CastMember";
 
 interface CastCardProps {
   member: CastMember;

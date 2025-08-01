@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router";
-import ShowListPage from "./pages/ShowListPage";
-import ShowDetailPage from "./pages/ShowDetailPage";
+import ShowListPage from "./pages/ShowListPage/ShowListPage";
+import ShowDetailPage from "./pages/ShowDetailPage/ShowDetailPage";
 import ErrorPage from "./pages/ErrorPage";
 
 const baseRouteObject = {

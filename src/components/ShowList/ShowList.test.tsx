@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { ShowList } from './ShowList';
-import { TestProviders } from '../utils/testUtils';
+import { TestProviders } from '../../utils/testUtils';
 
 describe('ShowList', () => {
   it('renders a list of shows and a "See more shows" button', async () => {

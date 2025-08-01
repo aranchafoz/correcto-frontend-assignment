@@ -1,6 +1,6 @@
-import { useInfiniteShows } from '../hooks/useInfiniteShows';
+import { useInfiniteShows } from '../../hooks/useInfiniteShows';
 import { useState, useMemo } from 'react';
-import { ShowCard } from './ShowCard';
+import { ShowCard } from '../ShowCard/ShowCard';
 import { List, SeeMoreButton } from './ShowList.styles';
 
 const VISIBLE_SHOWS_COUNT = 20;

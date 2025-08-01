@@ -1,6 +1,6 @@
-import { routes } from '../constants/routes';
-import { TvShow } from '../types/TvShow';
-import FavoriteButton from './FavoriteButton';
+import { routes } from '../../constants/routes';
+import { TvShow } from '../../types/TvShow';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 import { ShowCardContent, ShowCardDescription, ShowCardHeader, ShowCardLink, ShowCardTitle, ShowImage } from './ShowCard.styles';
 
 interface ShowCardProps {

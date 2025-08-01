@@ -1,8 +1,8 @@
 import { describe, test, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { ShowCard } from './ShowCard';
-import { mockShow } from '../mocks/data/mockShow';
-import { TestProviders } from '../utils/testUtils';
+import { mockShow } from '../../mocks/data/mockShow';
+import { TestProviders } from '../../utils/testUtils';
 
 describe('<ShowCard />', () => {
   test('renders show data correctly', () => {

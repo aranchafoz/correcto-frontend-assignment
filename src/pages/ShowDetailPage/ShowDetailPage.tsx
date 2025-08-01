@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router";
-import { CastMember } from "../types/CastMember";
-import useShowDetails from "../hooks/useShowDetails";
-import CastMemberCard from "../components/CastMemberCard";
-import FavoriteButton from "../components/FavoriteButton";
+import { CastMember } from "../../types/CastMember";
+import useShowDetails from "../../hooks/useShowDetails";
+import CastMemberCard from "../../components/CastMemberCard/CastMemberCard";
+import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
 import { BackButton, CastList, ContentWrapper, Details, InfoList, PageWrapper, Poster, TitleRow } from "./ShowDetailPage.styles";
-import { routes } from "../constants/routes";
+import { routes } from "../../constants/routes";
 
 const ShowDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

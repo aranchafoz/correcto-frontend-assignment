@@ -12,10 +12,4 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     text-align: center;
   }
-
-  h1 {
-    color: ${({ theme }) => theme.colors.textPrimaryColor};
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
 `;

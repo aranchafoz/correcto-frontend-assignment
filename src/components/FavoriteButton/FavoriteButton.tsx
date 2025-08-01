@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { favoriteShowIds, toggleFavorite } from '../signals/favorites';
+import { favoriteShowIds, toggleFavorite } from '../../signals/favorites';
 import { useSignalEffect } from '@preact/signals-react';
 import { StyledButton } from './FavoriteButton.styles';
 

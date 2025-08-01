@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import CastMemberCard from './CastMemberCard';
 import { describe, it, expect } from 'vitest';
-import { mockMember } from '../mocks/data/mockCastMember';
+import { mockMember } from '../../mocks/data/mockCastMember';
 
 describe('CastMemberCard', () => {
   it('renders the cast member name and character', () => {
